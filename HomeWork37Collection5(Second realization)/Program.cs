@@ -50,7 +50,7 @@
             {
                 if (number == collection[j])
                 {
-                    collection.Remove(collection[j]);
+                    collection.RemoveAt(j);
                     j--;
 
                     if (i >= 0)
@@ -66,7 +66,6 @@
 
     static void ShowCollection(List<int> newCollection)
     {
-        newCollection.Sort();
 
         foreach (int number in newCollection)
             Console.Write(number + " ");

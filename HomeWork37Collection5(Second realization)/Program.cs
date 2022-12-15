@@ -17,12 +17,6 @@
         Console.WriteLine("\nВторая коллекция");
         CreateCollection(secondCollection, secondCollectionLength, minNumberValue, maxNumberValue);
 
-        Console.WriteLine("\nПервая коллекция после отсеивания");
-        RemoveSameNumbersInCollection(firstCollection);
-
-        Console.WriteLine("\nВторая коллекция после отсеивания");
-        RemoveSameNumbersInCollection(secondCollection);
-
         newCollection.AddRange(firstCollection);
         newCollection.AddRange(secondCollection);
 
@@ -41,10 +35,7 @@
             collection.Add(number);
         }
 
-        foreach (int number in collection)
-            Console.Write(number + " ");
-
-        collection.Sort();
+        ShowCollection(collection);
 
         Console.WriteLine();
     }
@@ -68,11 +59,16 @@
             }
         }
 
-        collection.Sort();
-
-        foreach (int number in collection)
-            Console.Write(number + " ");
+        ShowCollection(collection);
 
         Console.WriteLine();
+    }
+
+    static void ShowCollection(List<int> newCollection)
+    {
+        newCollection.Sort();
+
+        foreach (int number in newCollection)
+            Console.Write(number + " ");
     }
 }
